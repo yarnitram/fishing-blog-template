@@ -1,5 +1,4 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
-
-export const SITE_TITLE = 'Astro Blog';
-export const SITE_DESCRIPTION = 'Welcome to my website!';
+// Global site metadata for this fishing blog niche
+// In production, these can be set via environment variables (e.g., PUBLIC_SITE_TITLE)
+export const SITE_TITLE = 'Kayak Angler Pro';
+export const SITE_DESCRIPTION = 'The ultimate tested guide to pedal kayaks, paddle rigs, electronics, and rigging techniques.';
