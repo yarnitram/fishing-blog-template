@@ -18,45 +18,46 @@ const {
 } = Astro.props;
 ---
 
-<div class="my-8 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm bg-white dark:bg-slate-900">
-  <div class="p-4 bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 font-bold text-sm text-slate-800 dark:text-slate-100">
-    📊 {title}
+<div class="my-8 rounded-2xl border-2 border-slate-300 overflow-hidden shadow-sm bg-white">
+  <div class="p-4 bg-slate-100 border-b-2 border-slate-300 font-black text-sm text-slate-950 flex items-center gap-2">
+    <span>📊</span>
+    <span>{title}</span>
   </div>
 
   <div class="overflow-x-auto">
-    <table class="w-full text-left text-sm">
-      <thead class="bg-slate-100/70 dark:bg-slate-950/40 text-xs uppercase tracking-wider text-slate-500 border-b border-slate-200 dark:border-slate-800">
+    <table class="w-full text-left text-sm border-collapse">
+      <thead class="bg-slate-100 text-xs uppercase tracking-wider text-slate-800 font-black border-b border-slate-300">
         <tr>
-          <th class="py-3 px-4">Product</th>
-          <th class="py-3 px-4">Best For</th>
-          <th class="py-3 px-4">Rating</th>
-          <th class="py-3 px-4">Price</th>
-          <th class="py-3 px-4 text-right">Action</th>
+          <th class="py-3.5 px-4 font-black">Product</th>
+          <th class="py-3.5 px-4 font-black">Best For</th>
+          <th class="py-3.5 px-4 font-black">Rating</th>
+          <th class="py-3.5 px-4 font-black">Price</th>
+          <th class="py-3.5 px-4 text-right font-black">Action</th>
         </tr>
       </thead>
-      <tbody class="divide-y divide-slate-100 dark:divide-slate-800/60">
+      <tbody class="divide-y divide-slate-200">
         {items.map((item) => (
-          <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
-            <td class="py-3.5 px-4 font-semibold text-slate-900 dark:text-white">
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="py-4 px-4 font-bold text-slate-950">
               {item.name}
             </td>
-            <td class="py-3.5 px-4 text-xs">
-              <span class="px-2 py-0.5 rounded bg-teal-50 text-teal-700 dark:bg-teal-950/40 dark:text-teal-300 font-medium">
+            <td class="py-4 px-4 text-xs">
+              <span class="px-2.5 py-1 rounded-full bg-teal-100 text-teal-900 border border-teal-300 font-bold">
                 {item.badge || 'Tested'}
               </span>
             </td>
-            <td class="py-3.5 px-4 text-xs font-semibold text-amber-500">
+            <td class="py-4 px-4 text-xs font-black text-amber-700">
               ⭐ {item.rating || '4.8'}
             </td>
-            <td class="py-3.5 px-4 text-xs font-bold text-emerald-600 dark:text-emerald-400">
+            <td class="py-4 px-4 text-xs font-black text-emerald-700">
               {item.price || 'Check'}
             </td>
-            <td class="py-3.5 px-4 text-right">
+            <td class="py-4 px-4 text-right">
               <a
                 href={item.affiliateUrl}
                 target="_blank"
                 rel="nofollow sponsored noopener"
-                class="inline-block px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 transition-colors"
+                class="inline-block px-3.5 py-1.5 rounded-lg text-xs font-black bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-xs transition-colors"
               >
                 View →
               </a>

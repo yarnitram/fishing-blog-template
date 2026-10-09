@@ -76,7 +76,7 @@ async function syncFromSupabase() {
   }
 
   for (const art of articles) {
-    let body = art.content;
+    let body = art.content.replace(/^#\s+[^\n]+\n+/, '');
 
     // Replace [AFFILIATE_CARD:shortcode] with JSX <AffiliateCard ... />
     body = body.replace(/\[AFFILIATE_CARD:([^\]]+)\]/g, (match, shortcode) => {

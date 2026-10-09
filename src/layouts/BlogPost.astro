@@ -18,47 +18,47 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<BaseHead title={title} description={description} />
 	</head>
 
-	<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col font-sans">
+	<body class="bg-slate-50 text-slate-950 antialiased min-h-screen flex flex-col font-sans">
 		<Header />
 
 		<main class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-8 flex-1">
 			<!-- Breadcrumbs -->
-			<nav class="flex items-center gap-2 text-xs text-slate-500 mb-6 font-medium">
-				<a href="/" class="hover:text-teal-600 transition-colors">Home</a>
-				<span>/</span>
-				<a href="/blog" class="hover:text-teal-600 transition-colors">Gear Reviews</a>
-				<span>/</span>
-				<span class="text-slate-900 font-semibold truncate max-w-xs">{title}</span>
+			<nav class="flex items-center gap-2 text-xs text-slate-700 mb-6 font-semibold">
+				<a href="/" class="hover:text-teal-700 transition-colors">Home</a>
+				<span class="text-slate-400">/</span>
+				<a href="/blog" class="hover:text-teal-700 transition-colors">Gear Reviews</a>
+				<span class="text-slate-400">/</span>
+				<span class="text-slate-950 font-bold truncate max-w-xs">{title}</span>
 			</nav>
 
 			<article>
 				<!-- Article Header -->
 				<header class="space-y-4 mb-8">
 					<div class="flex items-center gap-2.5">
-						<span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-50 text-teal-700 border border-teal-200/60">
+						<span class="px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-teal-100 text-teal-900 border border-teal-300">
 							Field-Tested Review
 						</span>
-						<span class="text-xs text-slate-500 flex items-center gap-1 font-medium">
+						<span class="text-xs text-slate-700 flex items-center gap-1 font-bold">
 							🕒 7 Min Read
 						</span>
 					</div>
 
-					<h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 leading-[1.15]">
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-950 leading-[1.15]">
 						{title}
 					</h1>
 
-					<p class="text-lg text-slate-600 leading-relaxed max-w-3xl">
+					<p class="text-lg text-slate-700 font-medium leading-relaxed max-w-3xl">
 						{description}
 					</p>
 
 					<!-- Author & Date Meta -->
-					<div class="flex items-center gap-3 pt-3 border-t border-slate-200 text-xs text-slate-500">
-						<div class="w-8 h-8 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-xs">
+					<div class="flex items-center gap-3 pt-4 border-t-2 border-slate-200 text-xs text-slate-700">
+						<div class="w-9 h-9 rounded-full bg-teal-700 text-white font-black flex items-center justify-center text-xs">
 							RY
 						</div>
 						<div>
-							<div class="font-bold text-slate-900">Rigged Yak Testing Crew</div>
-							<div class="text-[11px] text-slate-500">
+							<div class="font-extrabold text-slate-950">Rigged Yak Testing Crew</div>
+							<div class="text-[11px] text-slate-600 font-semibold">
 								Published <FormattedDate date={pubDate} />
 								{updatedDate && <span> • Updated on <FormattedDate date={updatedDate} /></span>}
 							</div>
@@ -68,7 +68,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 				<!-- Hero Image -->
 				{heroImage && (
-					<div class="mb-8 rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+					<div class="mb-8 rounded-2xl overflow-hidden border-2 border-slate-300 shadow-md">
 						<img
 							src={typeof heroImage === 'string' ? heroImage : heroImage.src}
 							alt={title}
@@ -89,23 +89,23 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				<AdBanner slotName="Post Content Footer" />
 
 				<!-- Author Bio Box -->
-				<div class="mt-12 p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center gap-5">
-					<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white font-black text-xl flex items-center justify-center shrink-0 shadow-sm">
+				<div class="mt-12 p-6 rounded-2xl bg-white border-2 border-slate-300 shadow-xs flex flex-col sm:flex-row items-center gap-5">
+					<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-600 to-emerald-700 text-white font-black text-xl flex items-center justify-center shrink-0 shadow-sm">
 						🎣
 					</div>
 					<div class="space-y-1 text-center sm:text-left">
-						<h3 class="text-base font-bold text-slate-900">About the Rigged Yak Testing Crew</h3>
-						<p class="text-xs text-slate-600 leading-relaxed">
+						<h3 class="text-base font-black text-slate-950">About the Rigged Yak Testing Crew</h3>
+						<p class="text-xs text-slate-700 leading-relaxed font-medium">
 							Our team has over 20 years of collective tournament and recreational kayak fishing experience. We purchase or field-test every hull, fish finder, and paddle in real water conditions before publishing ratings.
 						</p>
 					</div>
 				</div>
 
 				<!-- Back to Guides Button -->
-				<div class="mt-8 pt-6 border-t border-slate-200 flex items-center justify-between">
+				<div class="mt-8 pt-6 border-t-2 border-slate-200 flex items-center justify-between">
 					<a
 						href="/blog"
-						class="inline-flex items-center gap-2 text-sm font-bold text-teal-700 hover:text-teal-800 transition-colors"
+						class="inline-flex items-center gap-2 text-sm font-black text-teal-800 hover:text-teal-950 transition-colors"
 					>
 						<span>← Back to All Reviews & Guides</span>
 					</a>
