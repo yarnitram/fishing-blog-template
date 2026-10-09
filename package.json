@@ -6,8 +6,9 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "node scripts/sync-supabase.mjs && astro dev",
+    "build": "node scripts/sync-supabase.mjs && astro build",
+    "sync": "node scripts/sync-supabase.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
