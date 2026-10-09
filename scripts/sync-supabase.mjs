@@ -6,6 +6,16 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Load .env automatically if present
+const localEnvPath = path.join(__dirname, '..', '.env');
+if (fs.existsSync(localEnvPath) && typeof process.loadEnvFile === 'function') {
+  try {
+    process.loadEnvFile(localEnvPath);
+  } catch (e) {
+    // ignore
+  }
+}
+
 const supabaseUrl = process.env.PUBLIC_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.PUBLIC_SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 const siteSlug = process.env.SITE_SLUG || 'kayak-fishing';
