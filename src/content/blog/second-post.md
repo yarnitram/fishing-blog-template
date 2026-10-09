@@ -1,16 +1,35 @@
 ---
-title: 'Second post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 15 2022'
-heroImage: '../../assets/blog-placeholder-4.jpg'
+title: 'Essential Kayak Fishing Safety Gear: PFDs, Leashes, and Visual Flags'
+description: 'Staying safe on open water: our field guide to high-buoyancy low-profile PFDs, rod leashes, marine VHF radios, and 360-degree visibility flags.'
+pubDate: 'Jan 15 2026'
+heroImage: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+When you are seated just inches above the water line, safety is paramount. Weather conditions can change in minutes, speedboats often fail to see low-profile plastic kayaks, and sudden capsizes happen when setting hooks on trophy fish.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+Before you launch your rig onto any lake, river, or coastal bay, ensure your kayak is outfitted with these five safety essentials.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+## 1. High-Back Kayak Fishing PFD (Life Vest)
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+Never settle for a bulky watersports vest that rides up your neck while seated in a lawnchair-style kayak seat. Dedicated kayak fishing PFDs feature a high-mesh back panel designed specifically to clear tall seat frames.
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+Look for models with:
+- **Large tackle chest pockets**: Store nippers, pliers, and soft plastics for quick access.
+- **Lash tabs**: Mount a blunt-tip rescue knife for quickly cutting tangled anchor lines.
+- **US Coast Guard Type III approval**: Ensures dependable flotation in turbulent water.
+
+## 2. 360-Degree LED Safety Flag and Light
+
+Visibility is your first line of defense against inattentive boaters. A 4-to-6 foot elevated carbon fiber mast equipped with a high-visibility orange flag and a USCG-certified white LED navigation light ensures your kayak is visible over boat wakes and low swells, especially in fog or pre-dawn launches.
+
+## 3. Rod & Paddle Leashes
+
+A single rogue wave or an aggressive strike from a bull redfish can send an expensive combo straight to the bottom. Heavy-duty coiled bungees or Kevlar retractable lanyards tether your rods and paddle securely to the accessory gear tracks without restricting your casting arc.
+
+## 4. Handheld Marine VHF Radio
+
+Cell phones often lose reception in marshlands and offshore barrier islands. A floating, submersible handheld VHF radio allows you to contact the US Coast Guard on Channel 16 or coordinate with fishing buddies on local channels in any emergency.
+
+## Final Word
+
+Safety gear is not an area to cut corners. Investing in comfortable, certified safety equipment ensures you return safely to the boat ramp after every trip.

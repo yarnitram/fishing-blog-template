@@ -101,7 +101,7 @@ async function syncFromSupabase() {
 title: ${JSON.stringify(art.title)}
 description: ${JSON.stringify(art.excerpt || art.seo_description || '')}
 pubDate: '${art.published_at ? new Date(art.published_at).toDateString() : new Date().toDateString()}'
-heroImage: '${art.cover_image || '../../assets/blog-placeholder-1.jpg'}'
+heroImage: '${art.cover_image || 'https://images.unsplash.com/photo-1762655210992-e2dd74cf3118?auto=format&fit=crop&w=1200&q=80'}'
 ---
 import AffiliateCard from '../../components/AffiliateCard.astro';
 import ComparisonTable from '../../components/ComparisonTable.astro';

@@ -1,16 +1,35 @@
 ---
-title: 'First post'
-description: 'Lorem ipsum dolor sit amet'
-pubDate: 'Jul 08 2022'
-heroImage: '../../assets/blog-placeholder-3.jpg'
+title: 'Best Kayak Trolling Motors: Complete Electric Power & Mount Guide (2026)'
+description: 'Tired of paddling against stiff headwinds and heavy tides? We put the top kayak-specific electric trolling motors and lithium battery setups to the test.'
+pubDate: 'Jan 22 2026'
+heroImage: 'https://images.unsplash.com/photo-1762655438374-12499e8f31cb?auto=format&fit=crop&w=1200&q=80'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+Adding a dedicated electric motor system to your fishing kayak transforms how you cover water. Instead of exhausting your shoulders before making your first cast, a transom or bow-mounted electric drive allows you to cruise at 4 to 5 mph, navigate strong river currents, and quietly hold position on offshore structure.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+In this tested guide, our team reviews the top kayak trolling motor options and explains how to properly wire a lightweight lithium battery bank.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+## Why Motorize Your Fishing Kayak?
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+While pedal drives are outstanding for hands-free positioning, an electric motor offers several game-changing advantages:
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+1. **Extended Range**: Cover 15 to 25 miles on a single charge without physical fatigue.
+2. **Speed in Adverse Conditions**: Safely combat sudden afternoon headwinds and outgoing tides.
+3. **Spot-Lock GPS Capability**: Advanced bow mounts let you push a button and hold position over brush piles while you focus exclusively on casting.
+
+## Key Factors to Consider Before Buying
+
+### 1. Thrust Rating (lbs)
+For kayaks measuring 10 to 14 feet, a 24 lb to 55 lb thrust motor is ideal. A 30 lb thrust motor easily pushes an average loaded kayak to hull speed (approx 4.2 mph), while a 55 lb motor delivers extra authority in swift river currents.
+
+### 2. Shaft Length
+Standard boat trolling motors feature 45-to-54 inch shafts that stick awkwardly high into your casting lane. For kayaks, choose a model with a 24-inch to 36-inch shaft or an adjustable collar to prevent snagging overhead fly rods and low tree limbs.
+
+### 3. Battery Chemistry (LiFePO4 vs Lead-Acid)
+Traditional lead-acid marine batteries weigh 50–65 pounds, severely consuming your kayak's maximum weight capacity. Switching to a **12V 50Ah to 100Ah LiFePO4 lithium battery** slashes weight down to just 14–24 pounds while providing steady voltage output until the cell is depleted.
+
+## Summary Checklist
+
+- **Bow Mount vs Stern Mount**: Stern mounts maintain a cleaner cockpit for standing casts, while bow-mounted motors with remote steering offer superior micro-maneuverability.
+- **Kill Switch & Circuit Breaker**: Always install an inline 50A waterproof marine circuit breaker and lanyard kill switch for safety.
+- **Registration**: In most states, adding any motor (electric or gas) requires registering your kayak with your state wildlife agency.
