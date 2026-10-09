@@ -39,10 +39,12 @@ const pathname = Astro.url.pathname;
 				Gear Reviews
 			</a>
 			<a
-				href="/blog/top-kayak-fish-finders-2026"
-				class="px-3.5 py-2 rounded-lg hover:text-slate-900 hover:bg-slate-100 transition-colors"
+				href="/tools/kayak-finder"
+				class={`px-3.5 py-2 rounded-lg transition-colors ${
+					pathname.startsWith('/tools/kayak-finder') ? 'text-teal-700 bg-teal-50 font-bold' : 'hover:text-slate-900 hover:bg-slate-100'
+				}`}
 			>
-				Electronics Setup
+				🎯 Kayak Matchmaker
 			</a>
 			<a
 				href="/about"

@@ -88,16 +88,70 @@ const otherPosts = posts.slice(1);
 				</div>
 			)}
 
-			<!-- All Guides Grid -->
+			<!-- All Guides Grid & Category Filter -->
 			<div class="space-y-6 pt-6">
-				<div class="flex items-center justify-between border-b-2 border-slate-200 pb-3">
-					<h2 class="text-xl font-black text-slate-950">All Testing Guides & Articles</h2>
-					<span class="text-xs text-slate-700 font-bold">{posts.length} Guides Published</span>
+				<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-slate-200 pb-4">
+					<div>
+						<h2 class="text-xl font-black text-slate-950">All Testing Guides & Articles</h2>
+						<p class="text-xs text-slate-600 font-medium mt-0.5">Filter by gear category or rigging topic</p>
+					</div>
+					<span id="guide-count" class="text-xs text-slate-700 font-bold bg-slate-200 px-3 py-1 rounded-full w-fit">
+						{otherPosts.length} Guides Shown
+					</span>
 				</div>
 
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				<!-- Category Filter Pills -->
+				<div class="flex flex-wrap gap-2" id="category-filters">
+					<button
+						type="button"
+						data-filter="all"
+						class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-black transition-all bg-slate-950 text-white shadow-xs"
+					>
+						All Guides
+					</button>
+					<button
+						type="button"
+						data-filter="pedal-kayaks"
+						class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-black transition-all bg-white text-slate-700 border-2 border-slate-200 hover:border-teal-500 hover:text-teal-900"
+					>
+						🛶 Pedal Kayaks
+					</button>
+					<button
+						type="button"
+						data-filter="electronics"
+						class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-black transition-all bg-white text-slate-700 border-2 border-slate-200 hover:border-teal-500 hover:text-teal-900"
+					>
+						📡 Sonar & Electronics
+					</button>
+					<button
+						type="button"
+						data-filter="trolling-motors"
+						class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-black transition-all bg-white text-slate-700 border-2 border-slate-200 hover:border-teal-500 hover:text-teal-900"
+					>
+						⚡ Trolling Motors
+					</button>
+					<button
+						type="button"
+						data-filter="safety-rigging"
+						class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-black transition-all bg-white text-slate-700 border-2 border-slate-200 hover:border-teal-500 hover:text-teal-900"
+					>
+						🦺 Safety & Rigging
+					</button>
+					<button
+						type="button"
+						data-filter="inshore-tactics"
+						class="cat-filter-btn px-4 py-2 rounded-xl text-xs font-black transition-all bg-white text-slate-700 border-2 border-slate-200 hover:border-teal-500 hover:text-teal-900"
+					>
+						🌊 Inshore Tactics
+					</button>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="articles-grid">
 					{otherPosts.map((post) => (
-						<article class="flex flex-col justify-between rounded-2xl bg-white border-2 border-slate-200 shadow-xs hover:shadow-md hover:border-teal-600 transition-all overflow-hidden group">
+						<article
+							data-category={post.data.category || 'kayak-reviews'}
+							class="article-card flex flex-col justify-between rounded-2xl bg-white border-2 border-slate-200 shadow-xs hover:shadow-md hover:border-teal-600 transition-all overflow-hidden group"
+						>
 							<div>
 								{post.data.heroImage && (
 									<a href={`/blog/${post.id}/`} class="block overflow-hidden h-48 bg-slate-100 relative">
@@ -152,5 +206,64 @@ const otherPosts = posts.slice(1);
 		</main>
 
 		<Footer />
+
+		<script>
+			function initCategoryFilters() {
+				const buttons = document.querySelectorAll<HTMLButtonElement>('.cat-filter-btn');
+				const cards = document.querySelectorAll<HTMLElement>('.article-card');
+				const countDisplay = document.getElementById('guide-count');
+
+				function setFilter(filter: string) {
+					let visibleCount = 0;
+
+					cards.forEach((card) => {
+						const cardCategory = card.dataset.category;
+						if (filter === 'all' || cardCategory === filter) {
+							card.style.display = 'flex';
+							visibleCount++;
+						} else {
+							card.style.display = 'none';
+						}
+					});
+
+					if (countDisplay) {
+						countDisplay.textContent = `${visibleCount} Guides Shown`;
+					}
+
+					buttons.forEach((btn) => {
+						const isMatch = btn.dataset.filter === filter;
+						if (isMatch) {
+							btn.className = 'cat-filter-btn px-4 py-2 rounded-xl text-xs font-black transition-all bg-slate-950 text-white shadow-xs';
+						} else {
+							btn.className = 'cat-filter-btn px-4 py-2 rounded-xl text-xs font-black transition-all bg-white text-slate-700 border-2 border-slate-200 hover:border-teal-500 hover:text-teal-900';
+						}
+					});
+				}
+
+				buttons.forEach((btn) => {
+					btn.addEventListener('click', () => {
+						const f = btn.dataset.filter || 'all';
+						setFilter(f);
+						const url = new URL(window.location.href);
+						if (f === 'all') {
+							url.searchParams.delete('category');
+						} else {
+							url.searchParams.set('category', f);
+						}
+						window.history.replaceState({}, '', url.toString());
+					});
+				});
+
+				// Check initial URL param
+				const params = new URLSearchParams(window.location.search);
+				const initialCategory = params.get('category');
+				if (initialCategory) {
+					setFilter(initialCategory);
+				}
+			}
+
+			initCategoryFilters();
+			document.addEventListener('astro:page-load', initCategoryFilters);
+		</script>
 	</body>
 </html>

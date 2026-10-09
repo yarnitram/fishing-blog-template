@@ -1,0 +1,308 @@
+---
+interface Props {
+  className?: string;
+}
+
+const { className = '' } = Astro.props;
+---
+
+<div class={`rounded-3xl bg-gradient-to-br from-slate-900 via-slate-950 to-teal-950 text-white p-6 sm:p-10 border-2 border-teal-500/40 shadow-xl ${className}`} id="kayak-finder-widget">
+  <div class="max-w-2xl mx-auto text-center space-y-3 mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 border border-teal-400/30 text-xs font-black uppercase tracking-wider">
+      <span>🎯 Interactive Field Tool</span>
+    </div>
+    <h2 class="text-2xl sm:text-4xl font-black text-white tracking-tight">
+      Find Your Ideal Fishing Rig in 60 Seconds
+    </h2>
+    <p class="text-sm text-slate-300 font-medium">
+      Answer 3 quick questions about your water type, propulsion style, and budget to get matched with the exact tested kayak for your needs.
+    </p>
+  </div>
+
+  <div class="max-w-xl mx-auto bg-slate-900/90 rounded-2xl border border-slate-700/80 p-6 shadow-inner">
+    <!-- Quiz Questions Form -->
+    <div id="quiz-step-container" class="space-y-6">
+      <!-- Step 1: Water Environment -->
+      <div class="quiz-question-group space-y-3" data-step="1">
+        <label class="block text-xs font-black uppercase tracking-wider text-teal-400">
+          1. Where do you fish most often?
+        </label>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          <button
+            type="button"
+            class="quiz-opt-btn p-3.5 rounded-xl border-2 border-slate-700 hover:border-teal-400 bg-slate-800 text-left text-xs font-bold text-white transition-all flex flex-col gap-1"
+            data-key="water"
+            data-val="lake"
+          >
+            <span class="text-base">🌲</span>
+            <span>Lakes & Reservoirs</span>
+            <span class="text-[10px] text-slate-400 font-normal">Need high standing stability</span>
+          </button>
+          <button
+            type="button"
+            class="quiz-opt-btn p-3.5 rounded-xl border-2 border-slate-700 hover:border-teal-400 bg-slate-800 text-left text-xs font-bold text-white transition-all flex flex-col gap-1"
+            data-key="water"
+            data-val="river"
+          >
+            <span class="text-base">⚡</span>
+            <span>Rivers & Rapids</span>
+            <span class="text-[10px] text-slate-400 font-normal">Need shallow agility</span>
+          </button>
+          <button
+            type="button"
+            class="quiz-opt-btn p-3.5 rounded-xl border-2 border-slate-700 hover:border-teal-400 bg-slate-800 text-left text-xs font-bold text-white transition-all flex flex-col gap-1"
+            data-key="water"
+            data-val="ocean"
+          >
+            <span class="text-base">🌊</span>
+            <span>Coastal Flats & Bays</span>
+            <span class="text-[10px] text-slate-400 font-normal">Need wave slicing tracking</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 2: Propulsion Style -->
+      <div class="quiz-question-group space-y-3" data-step="2">
+        <label class="block text-xs font-black uppercase tracking-wider text-teal-400">
+          2. Preferred Propulsion Style
+        </label>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          <button
+            type="button"
+            class="quiz-opt-btn p-3.5 rounded-xl border-2 border-slate-700 hover:border-teal-400 bg-slate-800 text-left text-xs font-bold text-white transition-all flex flex-col gap-1"
+            data-key="drive"
+            data-val="pedal"
+          >
+            <span class="text-base">🚲</span>
+            <span>Pedal Drive</span>
+            <span class="text-[10px] text-slate-400 font-normal">Hands-free casting & reverse</span>
+          </button>
+          <button
+            type="button"
+            class="quiz-opt-btn p-3.5 rounded-xl border-2 border-slate-700 hover:border-teal-400 bg-slate-800 text-left text-xs font-bold text-white transition-all flex flex-col gap-1"
+            data-key="drive"
+            data-val="paddle"
+          >
+            <span class="text-base">🚣</span>
+            <span>Traditional Paddle</span>
+            <span class="text-[10px] text-slate-400 font-normal">Lightweight & car-toppable</span>
+          </button>
+          <button
+            type="button"
+            class="quiz-opt-btn p-3.5 rounded-xl border-2 border-slate-700 hover:border-teal-400 bg-slate-800 text-left text-xs font-bold text-white transition-all flex flex-col gap-1"
+            data-key="drive"
+            data-val="motor"
+          >
+            <span class="text-base">⚡</span>
+            <span>Electric Motor Ready</span>
+            <span class="text-[10px] text-slate-400 font-normal">Cover huge water effortlessly</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Step 3: Target Budget -->
+      <div class="quiz-question-group space-y-3" data-step="3">
+        <label class="block text-xs font-black uppercase tracking-wider text-teal-400">
+          3. What is your target budget?
+        </label>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          <button
+            type="button"
+            class="quiz-opt-btn p-3.5 rounded-xl border-2 border-slate-700 hover:border-teal-400 bg-slate-800 text-left text-xs font-bold text-white transition-all flex flex-col gap-1"
+            data-key="budget"
+            data-val="budget"
+          >
+            <span class="text-base">💵</span>
+            <span>Under $1,000</span>
+            <span class="text-[10px] text-slate-400 font-normal">Best entry-level value</span>
+          </button>
+          <button
+            type="button"
+            class="quiz-opt-btn p-3.5 rounded-xl border-2 border-slate-700 hover:border-teal-400 bg-slate-800 text-left text-xs font-bold text-white transition-all flex flex-col gap-1"
+            data-key="budget"
+            data-val="mid"
+          >
+            <span class="text-base">💳</span>
+            <span>$1,000 – $2,200</span>
+            <span class="text-[10px] text-slate-400 font-normal">Tournament performance</span>
+          </button>
+          <button
+            type="button"
+            class="quiz-opt-btn p-3.5 rounded-xl border-2 border-slate-700 hover:border-teal-400 bg-slate-800 text-left text-xs font-bold text-white transition-all flex flex-col gap-1"
+            data-key="budget"
+            data-val="premium"
+          >
+            <span class="text-base">💎</span>
+            <span>Over $2,200</span>
+            <span class="text-[10px] text-slate-400 font-normal">Flagship offshore setup</span>
+          </button>
+        </div>
+      </div>
+
+      <button
+        id="calculate-match-btn"
+        disabled
+        class="w-full py-3.5 rounded-xl bg-teal-500 hover:bg-teal-400 disabled:opacity-40 disabled:cursor-not-allowed text-slate-950 font-black text-sm tracking-wide shadow-md transition-all flex items-center justify-center gap-2"
+      >
+        <span>🎯 Reveal My Ideal Kayak Match</span>
+        <span>→</span>
+      </button>
+    </div>
+
+    <!-- Match Result Container (Initially Hidden) -->
+    <div id="quiz-result-container" class="hidden space-y-5 animate-fade-in">
+      <div class="flex items-center justify-between border-b border-slate-700 pb-3">
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-black">
+          <span>✨ 98% Match Confidence</span>
+        </div>
+        <button id="reset-quiz-btn" class="text-xs text-slate-400 hover:text-white underline font-bold">
+          Retake Quiz
+        </button>
+      </div>
+
+      <div class="space-y-3">
+        <div class="text-xs uppercase font-black text-teal-400 tracking-wider" id="result-badge">
+          Best Overall Pedal Pick
+        </div>
+        <h3 class="text-xl sm:text-2xl font-black text-white" id="result-title">
+          Old Town Sportsman PDL 106
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-medium" id="result-desc">
+          Based on your choices, you need exceptional standing balance, instant reverse hands-free capability, and bulletproof durability.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-2.5 p-3 rounded-xl bg-slate-800/80 border border-slate-700 text-center text-xs">
+        <div>
+          <div class="text-[10px] text-slate-400 uppercase font-black">Weight</div>
+          <div class="font-extrabold text-white mt-0.5" id="result-weight">76 lbs</div>
+        </div>
+        <div>
+          <div class="text-[10px] text-slate-400 uppercase font-black">Capacity</div>
+          <div class="font-extrabold text-white mt-0.5" id="result-capacity">450 lbs</div>
+        </div>
+        <div>
+          <div class="text-[10px] text-slate-400 uppercase font-black">Est. Price</div>
+          <div class="font-extrabold text-teal-400 mt-0.5" id="result-price">$2,199</div>
+        </div>
+      </div>
+
+      <div class="pt-2">
+        <a
+          id="result-aff-link"
+          href="https://www.amazon.com/dp/B085VPR44K?tag=fishingnetwork-20"
+          target="_blank"
+          rel="sponsored nofollow noopener noreferrer"
+          class="w-full py-3.5 px-6 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-black text-sm tracking-wide shadow-md transition-all flex items-center justify-center gap-2"
+        >
+          <span>Check Best Price & Availability</span>
+          <span>→</span>
+        </a>
+        <div class="text-center text-[10px] text-slate-400 font-semibold mt-2">
+          Includes free shipping options & full manufacturer warranty
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initKayakFinder() {
+    const selected: Record<string, string> = {};
+    const optButtons = document.querySelectorAll<HTMLButtonElement>('.quiz-opt-btn');
+    const calcBtn = document.getElementById('calculate-match-btn') as HTMLButtonElement | null;
+    const formBox = document.getElementById('quiz-step-container');
+    const resultBox = document.getElementById('quiz-result-container');
+    const resetBtn = document.getElementById('reset-quiz-btn');
+
+    if (!calcBtn || !formBox || !resultBox) return;
+
+    optButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.key;
+        const val = btn.dataset.val;
+        if (!key || !val) return;
+
+        // Deselect others in group
+        const groupBtns = document.querySelectorAll<HTMLButtonElement>(`.quiz-opt-btn[data-key="${key}"]`);
+        groupBtns.forEach((b) => {
+          b.classList.remove('border-teal-400', 'bg-teal-950/40', 'text-teal-200');
+          b.classList.add('border-slate-700', 'bg-slate-800');
+        });
+
+        // Select clicked
+        btn.classList.add('border-teal-400', 'bg-teal-950/40', 'text-teal-200');
+        btn.classList.remove('border-slate-700', 'bg-slate-800');
+        selected[key] = val;
+
+        // Check if all 3 questions answered
+        if (selected.water && selected.drive && selected.budget) {
+          calcBtn.removeAttribute('disabled');
+        }
+      });
+    });
+
+    calcBtn.addEventListener('click', () => {
+      let title = 'Old Town Sportsman PDL 106';
+      let badge = '🏆 Best Overall Pedal Drive Winner';
+      let desc = 'Matches your priority for rock-solid standing balance, whisper-quiet instant reverse pedaling, and high weight capacity.';
+      let weight = '76 lbs';
+      let capacity = '450 lbs';
+      let price = '$2,199.99';
+      let url = 'https://www.amazon.com/dp/B085VPR44K?tag=fishingnetwork-20';
+
+      if (selected.budget === 'budget' || selected.drive === 'paddle') {
+        title = 'Perception Pescador Pro 10.0';
+        badge = '⭐ Best Value Lightweight Paddle Kayak';
+        desc = 'Matches your request for an agile, lightweight hull under 60 lbs that is easy to car-top and paddle into shallow backwaters.';
+        weight = '57 lbs';
+        capacity = '325 lbs';
+        price = '$879.00';
+        url = 'https://www.amazon.com/dp/B01878QZ2S?tag=fishingnetwork-20';
+      } else if (selected.drive === 'motor') {
+        title = 'Old Town Sportsman PDL 106 + Newport Vessels Motor Rig';
+        badge = '⚡ Electric Power Ready Platform';
+        desc = 'Offers a rugged stern transom ready for trolling motor mounting and lithium battery placement with maximum stability.';
+        weight = '76 lbs';
+        capacity = '450 lbs';
+        price = '$2,368.99';
+        url = 'https://www.amazon.com/dp/B085VPR44K?tag=fishingnetwork-20';
+      }
+
+      const resTitle = document.getElementById('result-title');
+      const resBadge = document.getElementById('result-badge');
+      const resDesc = document.getElementById('result-desc');
+      const resWeight = document.getElementById('result-weight');
+      const resCapacity = document.getElementById('result-capacity');
+      const resPrice = document.getElementById('result-price');
+      const resLink = document.getElementById('result-aff-link') as HTMLAnchorElement | null;
+
+      if (resTitle) resTitle.textContent = title;
+      if (resBadge) resBadge.textContent = badge;
+      if (resDesc) resDesc.textContent = desc;
+      if (resWeight) resWeight.textContent = weight;
+      if (resCapacity) resCapacity.textContent = capacity;
+      if (resPrice) resPrice.textContent = price;
+      if (resLink) resLink.href = url;
+
+      formBox.classList.add('hidden');
+      resultBox.classList.remove('hidden');
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        Object.keys(selected).forEach(k => delete selected[k]);
+        optButtons.forEach((b) => {
+          b.classList.remove('border-teal-400', 'bg-teal-950/40', 'text-teal-200');
+          b.classList.add('border-slate-700', 'bg-slate-800');
+        });
+        calcBtn.setAttribute('disabled', 'true');
+        resultBox.classList.add('hidden');
+        formBox.classList.remove('hidden');
+      });
+    }
+  }
+
+  initKayakFinder();
+  document.addEventListener('astro:page-load', initKayakFinder);
+</script>

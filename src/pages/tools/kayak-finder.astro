@@ -1,0 +1,79 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import KayakFinder from '../../components/KayakFinder.astro';
+import AffiliateDisclosure from '../../components/AffiliateDisclosure.astro';
+import AdBanner from '../../components/AdBanner.astro';
+import { SITE_TITLE } from '../../consts';
+
+const title = `Kayak Matchmaker Quiz - Find Your Ideal Fishing Rig | ${SITE_TITLE}`;
+const description = "Use our interactive kayak finder quiz to discover the best fishing kayak for your specific budget, water type, and propulsion style in 60 seconds.";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body class="bg-slate-50 text-slate-950 antialiased min-h-screen flex flex-col font-sans">
+		<Header />
+
+		<main class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-10 flex-1 space-y-10">
+			<!-- Breadcrumbs -->
+			<nav class="flex items-center gap-2 text-xs text-slate-700 font-semibold">
+				<a href="/" class="hover:text-teal-700 transition-colors">Home</a>
+				<span class="text-slate-400">/</span>
+				<span class="text-slate-950 font-bold">Kayak Matchmaker Tool</span>
+			</nav>
+
+			<AffiliateDisclosure />
+
+			<!-- Quiz Widget -->
+			<KayakFinder />
+
+			<!-- Educational Buyer's Guide Context Below Tool -->
+			<div class="rounded-3xl bg-white border-2 border-slate-200 p-8 sm:p-12 space-y-8 shadow-xs">
+				<div class="space-y-3">
+					<h2 class="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
+						How Our Match Algorithm Works
+					</h2>
+					<p class="text-sm text-slate-700 leading-relaxed font-medium">
+						Choosing the right fishing kayak requires balancing three critical trade-offs: hull stability versus paddling speed, weight versus portability, and features versus budget. Our interactive tool cross-references real-world field test data from over 20 top-selling models.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+					<div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+						<div class="text-2xl">⚖️</div>
+						<h3 class="font-black text-slate-950 text-sm">Primary Stability</h3>
+						<p class="text-xs text-slate-600 leading-relaxed">
+							Crucial for anglers who love standing to sight-cast into weed beds and flip docks with confidence.
+						</p>
+					</div>
+
+					<div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+						<div class="text-2xl">🚲</div>
+						<h3 class="font-black text-slate-950 text-sm">Drive Mechanics</h3>
+						<p class="text-xs text-slate-600 leading-relaxed">
+							Instant reverse pedal consoles keep your hands free to fight fish while keeping you off shallow rocks.
+						</p>
+					</div>
+
+					<div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+						<div class="text-2xl">🚗</div>
+						<h3 class="font-black text-slate-950 text-sm">Car-Top Portability</h3>
+						<p class="text-xs text-slate-600 leading-relaxed">
+							Hulls under 60 lbs can be solo car-topped without a trailer or expensive bed extender.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<AdBanner slotName="Tool Page Footer" />
+		</main>
+
+		<Footer />
+	</body>
+</html>

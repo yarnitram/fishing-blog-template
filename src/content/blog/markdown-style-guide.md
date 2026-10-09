@@ -3,6 +3,11 @@ title: 'Kayak Fishing Rigging & Tackle Storage Setup Guide'
 description: 'Everything you need to know about setting up tackle crates, gear tracks, rod holders, and water-resistant utility boxes on your kayak.'
 pubDate: 'Jan 02 2026'
 heroImage: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=1200&q=80'
+category: 'safety-rigging'
+rating: '4.8'
+topPickName: 'YakAttack BlackPak Pro Kayak Crate'
+topPickUrl: 'https://www.amazon.com/dp/B0B68X1959?tag=fishingnetwork-20'
+topPickPrice: '$165.00'
 ---
 
 When organizing gear inside a limited cockpit, efficiency is the name of the game. A cluttered deck leads to snapped rod tips, lost tackle boxes, and tangled lines at the worst possible moments.

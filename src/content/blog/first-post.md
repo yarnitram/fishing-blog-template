@@ -3,6 +3,11 @@ title: 'Best Kayak Trolling Motors: Complete Electric Power & Mount Guide (2026)
 description: 'Tired of paddling against stiff headwinds and heavy tides? We put the top kayak-specific electric trolling motors and lithium battery setups to the test.'
 pubDate: 'Jan 22 2026'
 heroImage: 'https://images.unsplash.com/photo-1762655438374-12499e8f31cb?auto=format&fit=crop&w=1200&q=80'
+category: 'trolling-motors'
+rating: '4.8'
+topPickName: 'Newport Vessels Kayak Series 36lb Thrust'
+topPickUrl: 'https://www.amazon.com/dp/B00V52G39S?tag=fishingnetwork-20'
+topPickPrice: '$169.00'
 ---
 
 Adding a dedicated electric motor system to your fishing kayak transforms how you cover water. Instead of exhausting your shoulders before making your first cast, a transom or bow-mounted electric drive allows you to cruise at 4 to 5 mph, navigate strong river currents, and quietly hold position on offshore structure.

@@ -3,6 +3,11 @@ title: 'Essential Kayak Fishing Safety Gear: PFDs, Leashes, and Visual Flags'
 description: 'Staying safe on open water: our field guide to high-buoyancy low-profile PFDs, rod leashes, marine VHF radios, and 360-degree visibility flags.'
 pubDate: 'Jan 15 2026'
 heroImage: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80'
+category: 'safety-rigging'
+rating: '4.9'
+topPickName: 'NRS Chinook OS Kayak Fishing Lifejacket'
+topPickUrl: 'https://www.amazon.com/dp/B07RBN8FDR?tag=fishingnetwork-20'
+topPickPrice: '$169.95'
 ---
 
 When you are seated just inches above the water line, safety is paramount. Weather conditions can change in minutes, speedboats often fail to see low-profile plastic kayaks, and sudden capsizes happen when setting hooks on trophy fish.

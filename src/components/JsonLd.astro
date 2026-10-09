@@ -1,0 +1,94 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  heroImage?: string | { src: string };
+  rating?: string;
+  topPickName?: string;
+  topPickPrice?: string;
+}
+
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  rating = '4.8',
+  topPickName,
+  topPickPrice,
+} = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site || 'https://riggedyak.com').href;
+const imageUrl = heroImage
+  ? typeof heroImage === 'string'
+    ? heroImage
+    : new URL(heroImage.src, Astro.site || 'https://riggedyak.com').href
+  : 'https://images.unsplash.com/photo-1762655210992-e2dd74cf3118?auto=format&fit=crop&w=1200&q=80';
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalUrl,
+  },
+  headline: title,
+  description: description,
+  image: [imageUrl],
+  datePublished: pubDate.toISOString(),
+  dateModified: (updatedDate || pubDate).toISOString(),
+  author: {
+    '@type': 'Organization',
+    name: 'Rigged Yak Testing Crew',
+    url: 'https://riggedyak.com/about',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Rigged Yak',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://riggedyak.com/favicon.svg',
+    },
+  },
+};
+
+const reviewSchema = topPickName
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Review',
+      itemReviewed: {
+        '@type': 'Product',
+        name: topPickName,
+        offers: topPickPrice
+          ? {
+              '@type': 'Offer',
+              price: topPickPrice.replace(/[^0-9.]/g, ''),
+              priceCurrency: 'USD',
+              availability: 'https://schema.org/InStock',
+            }
+          : undefined,
+      },
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: rating,
+        bestRating: '5',
+      },
+      author: {
+        '@type': 'Organization',
+        name: 'Rigged Yak Testing Crew',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Rigged Yak',
+      },
+    }
+  : null;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+{reviewSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
+)}

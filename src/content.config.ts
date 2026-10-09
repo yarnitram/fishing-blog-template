@@ -14,6 +14,11 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.union([image(), z.string()]).optional(),
+			category: z.string().default('kayak-reviews'),
+			rating: z.string().optional(),
+			topPickName: z.string().optional(),
+			topPickUrl: z.string().optional(),
+			topPickPrice: z.string().optional(),
 		}),
 });
 

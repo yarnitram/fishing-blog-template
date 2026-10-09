@@ -7,6 +7,7 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 import AdBanner from '../components/AdBanner.astro';
+import KayakFinder from '../components/KayakFinder.astro';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -40,25 +41,25 @@ const posts = (await getCollection('blog')).sort(
 					<!-- Category Quick Filters -->
 					<div class="flex flex-wrap gap-2.5 pt-2">
 						<a
-							href="/blog/best-fishing-kayaks-2026"
+							href="/blog?category=pedal-kayaks"
 							class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-teal-700 border border-slate-700 hover:border-teal-400 text-xs font-black text-white shadow-xs transition-all flex items-center gap-1.5"
 						>
 							<span>🛶 Pedal Kayaks</span>
 						</a>
 						<a
-							href="/blog/top-kayak-fish-finders-2026"
+							href="/blog?category=electronics"
 							class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-teal-700 border border-slate-700 hover:border-teal-400 text-xs font-black text-white shadow-xs transition-all flex items-center gap-1.5"
 						>
 							<span>📡 Fish Finders & Sonar</span>
 						</a>
 						<a
-							href="/blog"
+							href="/blog?category=trolling-motors"
 							class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-teal-700 border border-slate-700 hover:border-teal-400 text-xs font-black text-white shadow-xs transition-all flex items-center gap-1.5"
 						>
-							<span>⚡ Lithium Rigging</span>
+							<span>⚡ Trolling Motors</span>
 						</a>
 						<a
-							href="/blog"
+							href="/blog?category=inshore-tactics"
 							class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-teal-700 border border-slate-700 hover:border-teal-400 text-xs font-black text-white shadow-xs transition-all flex items-center gap-1.5"
 						>
 							<span>🌊 Saltwater Inshore</span>
@@ -104,6 +105,9 @@ const posts = (await getCollection('blog')).sort(
 					</div>
 				</div>
 			</div>
+
+			<!-- Interactive Kayak Finder Quiz Widget -->
+			<KayakFinder />
 
 			<!-- Featured Buyer's Guides Grid -->
 			<div class="space-y-6">

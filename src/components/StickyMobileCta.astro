@@ -1,0 +1,72 @@
+---
+interface Props {
+  topPickName?: string;
+  topPickUrl?: string;
+  topPickPrice?: string;
+}
+
+const {
+  topPickName = 'Old Town Sportsman PDL 106',
+  topPickUrl = 'https://www.amazon.com/dp/B085VPR44K?tag=fishingnetwork-20',
+  topPickPrice = '$2,199',
+} = Astro.props;
+---
+
+<div
+  id="sticky-mobile-cta"
+  class="fixed bottom-0 inset-x-0 z-50 p-3 bg-slate-950/95 backdrop-blur-md border-t-2 border-teal-500 shadow-2xl transition-transform duration-300 translate-y-full md:hidden"
+>
+  <div class="max-w-md mx-auto flex items-center justify-between gap-3">
+    <div class="flex-1 min-w-0">
+      <div class="flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-teal-400">
+        <span>🏆 #1 Tested Pick</span>
+        {topPickPrice && <span class="text-slate-400 font-bold">• {topPickPrice}</span>}
+      </div>
+      <div class="text-xs font-black text-white truncate leading-tight mt-0.5">
+        {topPickName}
+      </div>
+    </div>
+
+    <div class="flex items-center gap-2 shrink-0">
+      <a
+        href={topPickUrl}
+        target="_blank"
+        rel="sponsored nofollow noopener noreferrer"
+        class="inline-flex items-center justify-center px-4 py-2 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-black text-xs shadow-md transition-colors"
+      >
+        <span>Check Price</span>
+        <span class="ml-1">→</span>
+      </a>
+
+      <button
+        id="dismiss-sticky-cta"
+        aria-label="Dismiss sticky bar"
+        class="w-7 h-7 rounded-lg bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center text-xs font-bold"
+      >
+        ✕
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const ctaBar = document.getElementById('sticky-mobile-cta');
+  const dismissBtn = document.getElementById('dismiss-sticky-cta');
+  let isDismissed = false;
+
+  if (dismissBtn && ctaBar) {
+    dismissBtn.addEventListener('click', () => {
+      isDismissed = true;
+      ctaBar.classList.add('translate-y-full');
+    });
+
+    window.addEventListener('scroll', () => {
+      if (isDismissed) return;
+      if (window.scrollY > 350) {
+        ctaBar.classList.remove('translate-y-full');
+      } else {
+        ctaBar.classList.add('translate-y-full');
+      }
+    }, { passive: true });
+  }
+</script>

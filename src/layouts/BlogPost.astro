@@ -6,16 +6,38 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import AffiliateDisclosure from '../components/AffiliateDisclosure.astro';
 import AdBanner from '../components/AdBanner.astro';
+import JsonLd from '../components/JsonLd.astro';
+import StickyMobileCta from '../components/StickyMobileCta.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const {
+	title,
+	description,
+	pubDate,
+	updatedDate,
+	heroImage,
+	rating,
+	topPickName,
+	topPickUrl,
+	topPickPrice,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
 	<head>
 		<BaseHead title={title} description={description} />
+		<JsonLd
+			title={title}
+			description={description}
+			pubDate={pubDate}
+			updatedDate={updatedDate}
+			heroImage={heroImage}
+			rating={rating}
+			topPickName={topPickName}
+			topPickPrice={topPickPrice}
+		/>
 	</head>
 
 	<body class="bg-slate-50 text-slate-950 antialiased min-h-screen flex flex-col font-sans">
@@ -114,5 +136,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		</main>
 
 		<Footer />
+		<StickyMobileCta
+			topPickName={topPickName}
+			topPickUrl={topPickUrl}
+			topPickPrice={topPickPrice}
+		/>
 	</body>
 </html>
