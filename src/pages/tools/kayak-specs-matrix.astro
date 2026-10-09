@@ -1,0 +1,71 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import SpecMatrix from '../../components/SpecMatrix.astro';
+import AffiliateDisclosure from '../../components/AffiliateDisclosure.astro';
+import AdBanner from '../../components/AdBanner.astro';
+import { SITE_TITLE } from '../../consts';
+
+const title = `Fishing Kayak Spec Matrix & Comparison Hub (2026) | ${SITE_TITLE}`;
+const description = "Interactive 2026 fishing kayak comparison table. Sort and filter pedal and paddle kayaks by weight, capacity, length, drive type, and pricing.";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+
+	<body class="bg-slate-50 text-slate-950 antialiased min-h-screen flex flex-col font-sans">
+		<Header />
+
+		<main class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-10 flex-1 space-y-10">
+			<!-- Breadcrumbs -->
+			<nav class="flex items-center gap-2 text-xs text-slate-700 font-semibold">
+				<a href="/" class="hover:text-teal-700 transition-colors">Home</a>
+				<span class="text-slate-400">/</span>
+				<span class="text-slate-950 font-bold">Kayak Spec Matrix</span>
+			</nav>
+
+			<AffiliateDisclosure />
+
+			<!-- Interactive Spec Matrix Component -->
+			<SpecMatrix />
+
+			<!-- Guide / Editorial Context -->
+			<div class="rounded-3xl bg-white border-2 border-slate-200 p-8 sm:p-12 space-y-6 shadow-xs">
+				<h2 class="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
+					How to Read Kayak Specifications Before You Buy
+				</h2>
+
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+					<div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+						<h3 class="font-black text-slate-950 text-sm">Understanding Capacity</h3>
+						<p class="text-xs text-slate-600 leading-relaxed font-medium">
+							The "Rule of 70%": Never exceed 70% of a kayak's stated weight limit. If a kayak is rated for 400 lbs, keep your body weight plus gear, cooler, and battery under 280 lbs for optimal freeboard.
+						</p>
+					</div>
+
+					<div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+						<h3 class="font-black text-slate-950 text-sm">Fitted vs Hull Weight</h3>
+						<p class="text-xs text-slate-600 leading-relaxed font-medium">
+							Hull weight measures just the plastic shell. Fully rigged with drive consoles, stadium seats, and tackle crates, your kayak will typically weigh 15–25 lbs more.
+						</p>
+					</div>
+
+					<div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+						<h3 class="font-black text-slate-950 text-sm">Pedal Drive Efficiency</h3>
+						<p class="text-xs text-slate-600 leading-relaxed font-medium">
+							Propeller-style drives offer instantaneous forward and reverse pedaling without pulling cables. Fin-style drives kick up automatically when contacting submerged rocks.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<AdBanner slotName="Spec Matrix Page Footer" />
+		</main>
+
+		<Footer />
+	</body>
+</html>

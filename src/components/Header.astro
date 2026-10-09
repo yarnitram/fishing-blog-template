@@ -44,7 +44,15 @@ const pathname = Astro.url.pathname;
 					pathname.startsWith('/tools/kayak-finder') ? 'text-teal-700 bg-teal-50 font-bold' : 'hover:text-slate-900 hover:bg-slate-100'
 				}`}
 			>
-				🎯 Kayak Matchmaker
+				🎯 Matchmaker
+			</a>
+			<a
+				href="/tools/kayak-specs-matrix"
+				class={`px-3.5 py-2 rounded-lg transition-colors ${
+					pathname.startsWith('/tools/kayak-specs-matrix') ? 'text-teal-700 bg-teal-50 font-bold' : 'hover:text-slate-900 hover:bg-slate-100'
+				}`}
+			>
+				📊 Spec Matrix
 			</a>
 			<a
 				href="/about"

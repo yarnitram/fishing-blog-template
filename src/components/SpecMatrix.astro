@@ -1,0 +1,377 @@
+---
+interface KayakSpec {
+  id: string;
+  name: string;
+  brand: string;
+  drive: 'pedal' | 'paddle' | 'motor';
+  driveLabel: string;
+  length: string;
+  weight: number; // in lbs
+  capacity: number; // in lbs
+  price: number; // numeric for sorting
+  priceFormatted: string;
+  badge?: string;
+  affiliateUrl: string;
+  imageUrl: string;
+}
+
+const KAYAKS: KayakSpec[] = [
+  {
+    id: 'old-town-pdl-106',
+    name: 'Sportsman PDL 106',
+    brand: 'Old Town',
+    drive: 'pedal',
+    driveLabel: '🚲 Forward/Reverse Pedal',
+    length: "10' 6\"",
+    weight: 76,
+    capacity: 450,
+    price: 2199.99,
+    priceFormatted: '$2,199.99',
+    badge: '🏆 Best Overall Pedal',
+    affiliateUrl: 'https://www.amazon.com/dp/B085VPR44K?tag=fishingnetwork-20',
+    imageUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80',
+  },
+  {
+    id: 'perception-pescador-pro-10',
+    name: 'Pescador Pro 10.0',
+    brand: 'Perception',
+    drive: 'paddle',
+    driveLabel: '🚣 Traditional Paddle',
+    length: "10' 6\"",
+    weight: 57,
+    capacity: 325,
+    price: 879.00,
+    priceFormatted: '$879.00',
+    badge: '⭐ Best Budget Paddle',
+    affiliateUrl: 'https://www.amazon.com/dp/B01878QZ2S?tag=fishingnetwork-20',
+    imageUrl: 'https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=400&q=80',
+  },
+  {
+    id: 'wilderness-recon-120',
+    name: 'Recon 120 HD Pedal',
+    brand: 'Wilderness Systems',
+    drive: 'pedal',
+    driveLabel: '🚲 Helix PD Pedal Drive',
+    length: "12' 2\"",
+    weight: 95,
+    capacity: 450,
+    price: 1849.00,
+    priceFormatted: '$1,849.00',
+    badge: '🌊 Best Offshore Chop',
+    affiliateUrl: 'https://www.amazon.com/dp/B085VPR44K?tag=fishingnetwork-20',
+    imageUrl: 'https://images.unsplash.com/photo-1762655210992-e2dd74cf3118?auto=format&fit=crop&w=400&q=80',
+  },
+  {
+    id: 'hobie-mirage-passport',
+    name: 'Mirage Passport 10.5',
+    brand: 'Hobie',
+    drive: 'pedal',
+    driveLabel: '🚲 MirageDrive Kick-Up',
+    length: "10' 6\"",
+    weight: 65,
+    capacity: 325,
+    price: 1799.00,
+    priceFormatted: '$1,799.00',
+    badge: '⚡ Lightweight Pedal',
+    affiliateUrl: 'https://www.amazon.com/dp/B085VPR44K?tag=fishingnetwork-20',
+    imageUrl: 'https://images.unsplash.com/photo-1764182160015-3892bd916cd3?auto=format&fit=crop&w=400&q=80',
+  },
+  {
+    id: 'bonafide-ss127',
+    name: 'SS127 Ultimate Stand-Up',
+    brand: 'Bonafide',
+    drive: 'paddle',
+    driveLabel: '🚣 Paddle / Motor Ready',
+    length: "12' 7\"",
+    weight: 75,
+    capacity: 475,
+    price: 1699.00,
+    priceFormatted: '$1,699.00',
+    badge: '🎯 Extreme Stability',
+    affiliateUrl: 'https://www.amazon.com/dp/B01878QZ2S?tag=fishingnetwork-20',
+    imageUrl: 'https://images.unsplash.com/photo-1762655035250-7bdc21d2d23e?auto=format&fit=crop&w=400&q=80',
+  },
+  {
+    id: 'pelican-catch-mode-110',
+    name: 'Catch Mode 110',
+    brand: 'Pelican',
+    drive: 'paddle',
+    driveLabel: '🚣 Ultra-Light Paddle',
+    length: "10' 8\"",
+    weight: 63,
+    capacity: 375,
+    price: 749.99,
+    priceFormatted: '$749.99',
+    badge: '💵 Value Starter Pick',
+    affiliateUrl: 'https://www.amazon.com/dp/B01878QZ2S?tag=fishingnetwork-20',
+    imageUrl: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&q=80',
+  },
+];
+---
+
+<div class="rounded-3xl bg-white border-2 border-slate-300 shadow-md overflow-hidden space-y-6 p-6 sm:p-8" id="spec-matrix-container">
+  <!-- Header & Filters -->
+  <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b-2 border-slate-200 pb-6">
+    <div>
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-100 text-teal-900 border border-teal-300 text-xs font-black uppercase tracking-wider mb-2">
+        <span>📊 2026 Spec Matrix</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-black text-slate-950 tracking-tight">
+        Interactive Fishing Kayak Comparison Matrix
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-600 font-medium mt-1">
+        Sort and filter by hull weight, weight capacity, propulsion, and price to find the perfect rig.
+      </p>
+    </div>
+
+    <!-- Quick Search & Filter Controls -->
+    <div class="flex flex-wrap items-center gap-2">
+      <input
+        type="text"
+        id="matrix-search-input"
+        placeholder="Filter model name..."
+        class="px-3.5 py-2 rounded-xl text-xs bg-slate-100 border-2 border-slate-300 text-slate-900 focus:outline-none focus:border-teal-600 font-medium"
+      />
+
+      <div class="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-300">
+        <button
+          type="button"
+          data-drive="all"
+          class="matrix-drive-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-950 text-white"
+        >
+          All
+        </button>
+        <button
+          type="button"
+          data-drive="pedal"
+          class="matrix-drive-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-700 hover:text-slate-950"
+        >
+          🚲 Pedal
+        </button>
+        <button
+          type="button"
+          data-drive="paddle"
+          class="matrix-drive-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-700 hover:text-slate-950"
+        >
+          🚣 Paddle
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Table -->
+  <div class="overflow-x-auto">
+    <table class="w-full text-left text-xs border-collapse" id="kayak-spec-table">
+      <thead>
+        <tr class="border-b-2 border-slate-300 text-slate-700 uppercase font-black tracking-wider text-[11px] bg-slate-50">
+          <th class="py-3.5 px-4">Kayak Model</th>
+          <th class="py-3.5 px-4">Drive Style</th>
+          <th class="py-3.5 px-3">Length</th>
+          <th class="py-3.5 px-3 cursor-pointer hover:text-teal-700 select-none matrix-sort-th" data-sort="weight">
+            <span class="flex items-center gap-1">
+              <span>Hull Wt</span>
+              <span class="sort-icon text-slate-400">↕</span>
+            </span>
+          </th>
+          <th class="py-3.5 px-3 cursor-pointer hover:text-teal-700 select-none matrix-sort-th" data-sort="capacity">
+            <span class="flex items-center gap-1">
+              <span>Capacity</span>
+              <span class="sort-icon text-slate-400">↕</span>
+            </span>
+          </th>
+          <th class="py-3.5 px-3 cursor-pointer hover:text-teal-700 select-none matrix-sort-th" data-sort="price">
+            <span class="flex items-center gap-1">
+              <span>Price</span>
+              <span class="sort-icon text-slate-400">↕</span>
+            </span>
+          </th>
+          <th class="py-3.5 px-4 text-right">Field Deal</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-200" id="matrix-tbody">
+        {KAYAKS.map((kayak) => (
+          <tr
+            class="matrix-row hover:bg-slate-50/80 transition-colors"
+            data-name={kayak.name.toLowerCase()}
+            data-brand={kayak.brand.toLowerCase()}
+            data-drive={kayak.drive}
+            data-weight={kayak.weight}
+            data-capacity={kayak.capacity}
+            data-price={kayak.price}
+          >
+            <!-- Model Name & Image -->
+            <td class="py-4 px-4">
+              <div class="flex items-center gap-3">
+                <img
+                  src={kayak.imageUrl}
+                  alt={kayak.name}
+                  class="w-12 h-12 rounded-xl object-cover border border-slate-300 shrink-0 shadow-2xs"
+                  loading="lazy"
+                />
+                <div>
+                  <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">{kayak.brand}</div>
+                  <div class="font-black text-slate-950 text-sm">{kayak.name}</div>
+                  {kayak.badge && (
+                    <span class="inline-block mt-0.5 px-2 py-0.5 rounded-full text-[10px] font-black bg-teal-100 text-teal-900 border border-teal-300">
+                      {kayak.badge}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </td>
+
+            <!-- Drive Style -->
+            <td class="py-4 px-4 font-bold text-slate-800">
+              {kayak.driveLabel}
+            </td>
+
+            <!-- Length -->
+            <td class="py-4 px-3 font-extrabold text-slate-900">
+              {kayak.length}
+            </td>
+
+            <!-- Weight -->
+            <td class="py-4 px-3">
+              <span class="font-extrabold text-slate-950">{kayak.weight}</span>
+              <span class="text-slate-500 font-semibold"> lbs</span>
+            </td>
+
+            <!-- Capacity -->
+            <td class="py-4 px-3">
+              <span class="font-extrabold text-emerald-800">{kayak.capacity}</span>
+              <span class="text-slate-500 font-semibold"> lbs</span>
+            </td>
+
+            <!-- Price -->
+            <td class="py-4 px-3 font-black text-slate-950 text-sm">
+              {kayak.priceFormatted}
+            </td>
+
+            <!-- Action Button -->
+            <td class="py-4 px-4 text-right">
+              <a
+                href={kayak.affiliateUrl}
+                target="_blank"
+                rel="sponsored nofollow noopener noreferrer"
+                class="inline-flex items-center gap-1 px-3.5 py-2 rounded-xl text-xs font-black bg-teal-600 hover:bg-teal-500 text-white shadow-2xs transition-all hover:scale-105"
+              >
+                <span>Check Price</span>
+                <span>→</span>
+              </a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="text-[11px] text-slate-500 font-medium border-t border-slate-200 pt-3 flex items-center justify-between">
+    <span>💡 Tip: Click column headers (Hull Wt, Capacity, Price) to sort ascending or descending.</span>
+    <span>Updated for 2026 season</span>
+  </div>
+</div>
+
+<script>
+  function initSpecMatrix() {
+    const table = document.getElementById('kayak-spec-table');
+    const tbody = document.getElementById('matrix-tbody');
+    const searchInput = document.getElementById('matrix-search-input') as HTMLInputElement | null;
+    const driveButtons = document.querySelectorAll<HTMLButtonElement>('.matrix-drive-btn');
+    const sortHeaders = document.querySelectorAll<HTMLElement>('.matrix-sort-th');
+
+    if (!table || !tbody) return;
+
+    let currentDrive = 'all';
+    let currentSearch = '';
+    let currentSortKey = '';
+    let sortAsc = true;
+
+    function applyFilterAndSort() {
+      const rows = Array.from(tbody.querySelectorAll<HTMLTableRowElement>('.matrix-row'));
+
+      // Filter
+      rows.forEach((row) => {
+        const drive = row.dataset.drive;
+        const name = row.dataset.name || '';
+        const brand = row.dataset.brand || '';
+
+        const matchesDrive = currentDrive === 'all' || drive === currentDrive;
+        const matchesSearch = !currentSearch || name.includes(currentSearch) || brand.includes(currentSearch);
+
+        if (matchesDrive && matchesSearch) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      // Sort
+      if (currentSortKey) {
+        const visibleRows = rows.filter(r => r.style.display !== 'none');
+        visibleRows.sort((a, b) => {
+          const valA = parseFloat(a.dataset[currentSortKey] || '0');
+          const valB = parseFloat(b.dataset[currentSortKey] || '0');
+          return sortAsc ? valA - valB : valB - valA;
+        });
+
+        visibleRows.forEach((r) => tbody.appendChild(r));
+      }
+    }
+
+    // Drive filter buttons
+    driveButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        currentDrive = btn.dataset.drive || 'all';
+        driveButtons.forEach((b) => {
+          if (b.dataset.drive === currentDrive) {
+            b.className = 'matrix-drive-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-slate-950 text-white';
+          } else {
+            b.className = 'matrix-drive-btn px-3 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-700 hover:text-slate-950';
+          }
+        });
+        applyFilterAndSort();
+      });
+    });
+
+    // Search input
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        currentSearch = searchInput.value.trim().toLowerCase();
+        applyFilterAndSort();
+      });
+    }
+
+    // Column sorting headers
+    sortHeaders.forEach((th) => {
+      th.addEventListener('click', () => {
+        const key = th.dataset.sort;
+        if (!key) return;
+
+        if (currentSortKey === key) {
+          sortAsc = !sortAsc;
+        } else {
+          currentSortKey = key;
+          sortAsc = true;
+        }
+
+        sortHeaders.forEach((h) => {
+          const icon = h.querySelector('.sort-icon');
+          if (icon) {
+            if (h === th) {
+              icon.textContent = sortAsc ? '▲' : '▼';
+              (icon as HTMLElement).classList.add('text-teal-700', 'font-black');
+            } else {
+              icon.textContent = '↕';
+              (icon as HTMLElement).classList.remove('text-teal-700', 'font-black');
+            }
+          }
+        });
+
+        applyFilterAndSort();
+      });
+    });
+  }
+
+  initSpecMatrix();
+  document.addEventListener('astro:page-load', initSpecMatrix);
+</script>
