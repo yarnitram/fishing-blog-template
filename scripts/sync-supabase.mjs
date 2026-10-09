@@ -52,12 +52,29 @@ async function syncFromSupabase() {
 
   const affiliateMap = new Map((affiliates || []).map((a) => [a.shortcode, a]));
 
-  // 3. Fetch published articles
+  // 3. Automatically publish any scheduled articles whose publish time has arrived
+  try {
+    const { data: activatedCount } = await supabase.rpc('publish_scheduled_articles');
+    if (activatedCount && activatedCount > 0) {
+      console.log(`⏰ Activated ${activatedCount} scheduled articles whose release time has arrived!`);
+    }
+  } catch (e) {
+    // Fallback direct update query
+    await supabase
+      .from('articles')
+      .update({ status: 'published' })
+      .eq('status', 'scheduled')
+      .lte('published_at', new Date().toISOString());
+  }
+
+  // 4. Fetch published articles (only those whose scheduled time has passed or was immediate)
+  const nowIso = new Date().toISOString();
   const { data: articles, error: artErr } = await supabase
     .from('articles')
     .select('*')
     .eq('site_id', site.id)
-    .eq('status', 'published');
+    .eq('status', 'published')
+    .or(`published_at.is.null,published_at.lte.${nowIso}`);
 
   if (artErr) {
     console.error('❌ Error fetching articles:', artErr.message);
