@@ -16,78 +16,136 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={`${SITE_TITLE} - Tested Kayak Fishing Reviews`} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen flex flex-col">
+	<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col font-sans">
 		<Header />
 		
-		<main class="w-full max-w-4xl mx-auto px-4 py-8 flex-1">
+		<main class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-10 flex-1 space-y-12">
 			<!-- Hero Section -->
-			<div class="py-10 px-6 sm:px-10 rounded-3xl bg-gradient-to-br from-slate-900 via-teal-950 to-slate-900 text-white shadow-xl mb-10 border border-slate-800">
-				<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-xs font-semibold mb-4 border border-teal-500/30">
-					<span>🎣 Field-Tested Kayak Fishing Reviews</span>
-				</div>
-				<h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-					Rig Smarter. Catch Bigger.
-				</h1>
-				<p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed mb-6">
-					Unbiased, hands-on tests of the best pedal kayaks, sonar systems, trolling motors, and tackle rigging. Built by anglers, for anglers.
-				</p>
+			<div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-teal-950 text-white p-8 sm:p-12 md:p-16 border border-slate-800 shadow-xl">
+				<div class="relative z-10 max-w-3xl space-y-6">
+					<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-500/20 text-teal-300 border border-teal-500/30 text-xs font-bold uppercase tracking-wider">
+						<span>🎣 Unbiased Kayak Fishing Field Lab</span>
+					</div>
 
-				<!-- Category Pills -->
-				<div class="flex flex-wrap gap-2 text-xs font-semibold">
-					<span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200">
-						🛶 Pedal Kayaks
-					</span>
-					<span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200">
-						📡 Fish Finders & Sonar
-					</span>
-					<span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200">
-						⚡ Lithium Rigging
-					</span>
-					<span class="px-3 py-1.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-200">
-						🌊 Saltwater & Inshore
-					</span>
+					<h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.1] text-white">
+						Rig Smarter. Paddle Less. <span class="text-teal-400">Catch Bigger.</span>
+					</h1>
+
+					<p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+						We spend hundreds of hours on lakes, rivers, and coastal flats testing pedal kayaks, sonar electronics, and rigging hardware so you make the right investment the first time.
+					</p>
+
+					<!-- Category Quick Filters -->
+					<div class="flex flex-wrap gap-2 pt-2">
+						<a
+							href="/blog/best-fishing-kayaks-2026"
+							class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-teal-700/80 border border-slate-700 hover:border-teal-500/50 text-xs font-bold text-white transition-all flex items-center gap-1.5"
+						>
+							<span>🛶 Pedal Kayaks</span>
+						</a>
+						<a
+							href="/blog/top-kayak-fish-finders-2026"
+							class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-teal-700/80 border border-slate-700 hover:border-teal-500/50 text-xs font-bold text-white transition-all flex items-center gap-1.5"
+						>
+							<span>📡 Fish Finders & Sonar</span>
+						</a>
+						<a
+							href="/blog"
+							class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-teal-700/80 border border-slate-700 hover:border-teal-500/50 text-xs font-bold text-white transition-all flex items-center gap-1.5"
+						>
+							<span>⚡ Lithium Rigging</span>
+						</a>
+						<a
+							href="/blog"
+							class="px-4 py-2 rounded-xl bg-slate-800/80 hover:bg-teal-700/80 border border-slate-700 hover:border-teal-500/50 text-xs font-bold text-white transition-all flex items-center gap-1.5"
+						>
+							<span>🌊 Saltwater Inshore</span>
+						</a>
+					</div>
 				</div>
+
+				<!-- Subtle background gradient glow -->
+				<div class="absolute -right-20 -bottom-20 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
 			</div>
 
 			<AffiliateDisclosure />
 
-			<!-- Featured Articles Section -->
+			<!-- Trust Value Props Bar -->
+			<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+				<div class="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex items-center gap-4">
+					<div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 font-bold flex items-center justify-center text-lg shrink-0">
+						💧
+					</div>
+					<div>
+						<div class="font-bold text-slate-900 text-sm">Real Water Testing</div>
+						<div class="text-xs text-slate-500 mt-0.5">Tested in wind, chop, and tournaments</div>
+					</div>
+				</div>
+
+				<div class="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex items-center gap-4">
+					<div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 font-bold flex items-center justify-center text-lg shrink-0">
+						⚖️
+					</div>
+					<div>
+						<div class="font-bold text-slate-900 text-sm">100% Unbiased</div>
+						<div class="text-xs text-slate-500 mt-0.5">We buy our own gear for honest reviews</div>
+					</div>
+				</div>
+
+				<div class="p-5 rounded-2xl bg-white border border-slate-200/80 shadow-xs flex items-center gap-4">
+					<div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-700 font-bold flex items-center justify-center text-lg shrink-0">
+						🎯
+					</div>
+					<div>
+						<div class="font-bold text-slate-900 text-sm">Clear Recommendations</div>
+						<div class="text-xs text-slate-500 mt-0.5">Direct pros, cons, and value ratings</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Featured Buyer's Guides Grid -->
 			<div class="space-y-6">
-				<div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
-					<h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-						Featured Buyer's Guides & Reviews
-					</h2>
-					<a href="/blog" class="text-xs font-semibold text-teal-600 dark:text-teal-400 hover:underline">
-						View All Articles →
+				<div class="flex items-center justify-between border-b border-slate-200 pb-3">
+					<div>
+						<h2 class="text-2xl font-black tracking-tight text-slate-950">
+							Latest Field Tests & Reviews
+						</h2>
+						<p class="text-xs text-slate-500 mt-1">Read our newest comprehensive guides and setup recommendations</p>
+					</div>
+					<a href="/blog" class="text-xs font-bold text-teal-700 hover:text-teal-800 hover:underline">
+						View All ({posts.length}) →
 					</a>
 				</div>
 
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 					{posts.map((post) => (
-						<article class="flex flex-col justify-between p-5 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-teal-500/50 transition-all dark:bg-slate-900 dark:border-slate-800">
-							<div>
-								<div class="text-xs text-slate-500 dark:text-slate-400 mb-2">
+						<article class="flex flex-col justify-between rounded-2xl bg-white border border-slate-200 shadow-xs hover:shadow-md hover:border-teal-500/50 transition-all overflow-hidden group">
+							<div class="p-6 space-y-3">
+								<div class="flex items-center justify-between text-xs text-slate-500">
+									<span class="font-bold text-teal-700 uppercase tracking-wider text-[11px]">
+										Tested Review
+									</span>
 									<FormattedDate date={post.data.pubDate} />
 								</div>
-								<h3 class="text-lg font-bold text-slate-900 dark:text-white hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
+
+								<h3 class="text-lg font-bold text-slate-950 group-hover:text-teal-700 transition-colors leading-snug">
 									<a href={`/blog/${post.id}/`}>
 										{post.data.title}
 									</a>
 								</h3>
-								<p class="text-xs text-slate-600 dark:text-slate-400 mt-2 line-clamp-3 leading-relaxed">
+
+								<p class="text-xs text-slate-600 leading-relaxed line-clamp-3">
 									{post.data.description}
 								</p>
 							</div>
 
-							<div class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between">
-								<span class="text-[11px] font-semibold text-teal-600 dark:text-teal-400">
-									Affiliate Review • Tested
-								</span>
+							<div class="px-6 py-3.5 bg-slate-50/70 border-t border-slate-100 flex items-center justify-between text-xs">
+								<span class="font-semibold text-slate-500">Full Ratings & Video</span>
 								<a
 									href={`/blog/${post.id}/`}
-									class="text-xs font-bold text-slate-900 dark:text-white hover:underline flex items-center gap-1"
+									class="font-bold text-teal-700 group-hover:text-teal-800 flex items-center gap-1"
 								>
 									<span>Read Guide</span>
 									<span>→</span>
@@ -98,7 +156,7 @@ const posts = (await getCollection('blog')).sort(
 				</div>
 			</div>
 
-			<AdBanner slotName="Home Bottom Leaderboard" />
+			<AdBanner slotName="Homepage Bottom Leaderboard" />
 		</main>
 
 		<Footer />

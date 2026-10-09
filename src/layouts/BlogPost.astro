@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
@@ -13,76 +12,107 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
 	<head>
 		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
 	</head>
 
-	<body>
+	<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col font-sans">
 		<Header />
-		<main>
+
+		<main class="w-full max-w-4xl mx-auto px-4 sm:px-6 py-8 flex-1">
+			<!-- Breadcrumbs -->
+			<nav class="flex items-center gap-2 text-xs text-slate-500 mb-6 font-medium">
+				<a href="/" class="hover:text-teal-600 transition-colors">Home</a>
+				<span>/</span>
+				<a href="/blog" class="hover:text-teal-600 transition-colors">Gear Reviews</a>
+				<span>/</span>
+				<span class="text-slate-900 font-semibold truncate max-w-xs">{title}</span>
+			</nav>
+
 			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{updatedDate && (
-								<div class="last-updated-on">
-									Last updated on <FormattedDate date={updatedDate} />
-								</div>
-							)}
-						</div>
-						<h1>{title}</h1>
-						<AffiliateDisclosure />
-						<hr />
+				<!-- Article Header -->
+				<header class="space-y-4 mb-8">
+					<div class="flex items-center gap-2.5">
+						<span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-teal-50 text-teal-700 border border-teal-200/60">
+							Field-Tested Review
+						</span>
+						<span class="text-xs text-slate-500 flex items-center gap-1 font-medium">
+							🕒 7 Min Read
+						</span>
 					</div>
+
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-950 leading-[1.15]">
+						{title}
+					</h1>
+
+					<p class="text-lg text-slate-600 leading-relaxed max-w-3xl">
+						{description}
+					</p>
+
+					<!-- Author & Date Meta -->
+					<div class="flex items-center gap-3 pt-3 border-t border-slate-200 text-xs text-slate-500">
+						<div class="w-8 h-8 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center text-xs">
+							KA
+						</div>
+						<div>
+							<div class="font-bold text-slate-900">Kayak Angler Testing Crew</div>
+							<div class="text-[11px] text-slate-500">
+								Published <FormattedDate date={pubDate} />
+								{updatedDate && <span> • Updated on <FormattedDate date={updatedDate} /></span>}
+							</div>
+						</div>
+					</div>
+				</header>
+
+				<!-- Hero Image -->
+				{heroImage && (
+					<div class="mb-8 rounded-2xl overflow-hidden border border-slate-200 shadow-md">
+						<img
+							src={typeof heroImage === 'string' ? heroImage : heroImage.src}
+							alt={title}
+							class="w-full h-auto max-h-[480px] object-cover"
+						/>
+					</div>
+				)}
+
+				<!-- FTC Affiliate Disclosure -->
+				<AffiliateDisclosure />
+
+				<!-- Article Body -->
+				<div class="prose-modern max-w-none">
 					<slot />
-					<AdBanner slotName="Bottom Article Ad Unit" />
+				</div>
+
+				<!-- In-Article Ad Unit -->
+				<AdBanner slotName="Post Content Footer" />
+
+				<!-- Author Bio Box -->
+				<div class="mt-12 p-6 rounded-2xl bg-white border border-slate-200 shadow-xs flex flex-col sm:flex-row items-center gap-5">
+					<div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white font-black text-xl flex items-center justify-center shrink-0 shadow-sm">
+						🎣
+					</div>
+					<div class="space-y-1 text-center sm:text-left">
+						<h3 class="text-base font-bold text-slate-900">About the Kayak Angler Editorial Team</h3>
+						<p class="text-xs text-slate-600 leading-relaxed">
+							Our team has over 20 years of collective tournament and recreational kayak fishing experience. We purchase or field-test every hull, fish finder, and paddle in real water conditions before publishing ratings.
+						</p>
+					</div>
+				</div>
+
+				<!-- Back to Guides Button -->
+				<div class="mt-8 pt-6 border-t border-slate-200 flex items-center justify-between">
+					<a
+						href="/blog"
+						class="inline-flex items-center gap-2 text-sm font-bold text-teal-700 hover:text-teal-800 transition-colors"
+					>
+						<span>← Back to All Reviews & Guides</span>
+					</a>
 				</div>
 			</article>
 		</main>
+
 		<Footer />
 	</body>
 </html>
